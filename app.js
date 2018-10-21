@@ -1,7 +1,6 @@
 const colors = require('colors')
 const {getLocation} = require('./locations/location')
 const {getWeather} = require('./weather/weather')
-require ('./config/const')
 const {argv} = require('./config/yargs')
 
 
