@@ -1,19 +1,22 @@
 const colors = require('colors')
 const {getLocation} = require('./locations/location')
+const {getWeather} = require('./weather/weather')
 require ('./config/const')
-const argv = require('yargs')
-            .options({
-                direccion: {
-                    alias: 'd',
-                    desc: 'Direccion de la ciudad para obtener el clima',
-                    demand: true
-                    }
-                }).argv;
+const {argv} = require('./config/yargs')
 
-getLocation(argv.direccion)
-                .then(response => {
-                    console.log(`Direccion: ${response.direccion}`.bgGreen)
-                    console.log(`Longitud: ${response.lat}`.cyan)
-                    console.log(`Latitud: ${response.lng}`.cyan)
-                })
-                .catch(error => console.log(error))
+
+let getInfo = async (direccion) => {
+
+    try {
+        let coors = await getLocation(direccion)
+        let temp = await getWeather(coors.lat, coors.lng)
+        return `La temperatuca en: ${coors.direccion} es de: ${temp.temp}C`.bgCyan
+    }catch(e){
+        return `No se pudo determinar el clima en: ${direccion}`.bgRed
+    }
+
+}
+
+getInfo(argv.direccion)
+    .then(response => console.log(response))
+    .catch(error => console.log(error))

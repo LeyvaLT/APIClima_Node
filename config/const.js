@@ -9,6 +9,8 @@
     // AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY
     // AIzaSyAbPC1F9pWeD70Ny8PHcjguPffSLhT-YF8
     // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
+    // OWM_API_KEY = 742d1e4f2990bf2ce2fff58706d5e48e
 
 const API_KEY = 'AIzaSyDyJPPlnIMOLp20Ef1LlTong8rYdTnaTXM'
+const OWM_API_KEY = '742d1e4f2990bf2ce2fff58706d5e48e'
 const GOOGLE_API_LOCATION = 'https://maps.googleapis.com/maps/api/geocode'
