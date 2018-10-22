@@ -9,7 +9,7 @@ let getInfo = async (direccion) => {
     try {
         let coors = await getLocation(direccion)
         let temp = await getWeather(coors.lat, coors.lng)
-        return `La temperatuca en: ${coors.direccion} es de: ${temp.temp}C`.bgCyan
+        return `La temperatura en: ${coors.direccion} es de: ${temp.temp}C`.bgCyan
     }catch(e){
         return `No se pudo determinar el clima en: ${direccion}`.bgRed
     }
